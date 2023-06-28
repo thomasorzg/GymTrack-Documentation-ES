@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+	<title>GymTrack - Documentación</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+	<div id="wrapper">
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<p>&mdash; Documentación &mdash;</p>
+			<ul class="sidebar-nav">
+				<li class="sidebar-brand"></li>
+				<li>
+					<a href="#main">INICIO</a>
+				</li>
+				<li>
+					<a href="#setup">INSTALACIÓN</a>
+				</li>
+				<li>
+					<a href="#support">SOPORTE</a>
+				</li>
+			</ul>
+		</div>
+		<!-- end of sidebar wrapper -->
+
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div id="main" class="col-lg-12">
+						<h1>INICIO</h1>
+						<p>
+							Bienvenido al archivo de ayuda para la instalación y configuración de la aplicación web
+							GymTrack.
+
+							<br><br>
+
+							<b>Introducción:</b>
+							<br>
+							GymTrack es una aplicación web con la arquitectura Multi-Tenant enfocada para SAAS, la cual
+							permite a los usuarios administrar sus gimnasios, así como también permite a los usuarios
+							administrar sus membresías, clientes, visitas, pagos y más.
+							<br><br>
+
+							<b>Requisitos del sistema:</b>
+							<br>
+							Antes de comenzar con la instalación, asegúrate de que tu sistema cumpla con los siguientes
+							requisitos:
+							<br><br>
+							<b>Navegador web:</b>
+							<br>
+							Se recomienda utilizar la última versión de Google Chrome, Mozilla Firefox o Safari para
+							obtener la mejor experiencia de usuario.
+							<br><br>
+							<b>Sistema operativo:</b>
+							<br>
+							GymTrack es compatible con todos los sistemas operativos, ya sea Windows, Linux o Mac.
+							<br><br>
+							<b>Instalación:</b>
+							<br>
+							Sigue los pasos a continuación para instalar GymTrack en tu sistema: <a
+								href="#setup">Presiona aquí</a>
+						</p>
+					</div> <!-- end of introduction -->
+
+					<div class="col-lg-12">
+						<hr>
+					</div> <!-- gray separator line -->
+
+
+					<div id="setup" class="col-lg-12">
+						<h1>INSTALACIÓN</h1>
+						<h3>Base de datos</h3>
+						<p>
+							Primeramente se debe instalar PostgreSQL, para ello se debe descargar el instalador desde la
+							página oficial de PostgreSQL <a
+								href="https://www.postgresql.org/download/">https://www.postgresql.org/download/</a> y
+							seguir los pasos de instalación.
+							Posteriormente a su instalación de PostgreSQL, ejecutaremos pgAdmin, el cual es el gestor
+							de base de datos para PostgreSQL, en el cual crearemos una base de datos con el nombre que
+							nosotros queramos, en este caso se llamará <b>"gymtrack"</b>.
+							El usuario que se utilizará para la conexión a la base de datos será <b>"postgres"</b> o el
+							usuario que se haya creado en la instalación de PostgreSQL y lo mismo con la contraseña.
+						</p>
+
+						<h3>BackEnd (Servidor)</h3>
+						<p>
+							Ahora continuaremos con la instalación del servidor, para ello se debe descargar el
+							instalador desde la página oficial de NodeJS <a
+								href="https://nodejs.org/es/download/">https://nodejs.org/es/download/</a> y seguir los
+							pasos de instalación.
+							Después de que se haya instalado NodeJS, se debe abrir una terminal y ejecutar el siguiente
+							comando:
+							<br>
+						<pre class="code-format">
+npm install
+							</pre>
+						<br>
+						Después de que se haya instalado las dependencias, optaremos por abrir el archivo
+						<b>".env.example"</b> y cambiar el nombre a <b>".env"</b>, en el cual lo abriremos y cambiaremos
+						los datos de conexión a la base de datos, los cuales son los siguientes los más primordiales (ya
+						que hay más variables que se pueden cambiar, más sin embargo estas son las que realizan la
+						conexión a la base de datos):
+						<br><br>
+						- <b>DB_HOST</b> = <span class="code">YOUR_HOST</span>
+						<br>
+						- <b>DB_USER</b> = <span class="code">YOUR_USER</span>
+						<br>
+						- <b>DB_PASS</b> = <span class="code">YOUR_PASS</span>
+						<br>
+						- <b>DB_DATABASE</b> = <span class="code">YOUR_DATABASE</span>
+						<br><br>
+						A continuación, esto incluye el archivo <b>".env.example"</b>:
+						<br>
+						<pre class="code-format">
+PORT=8080
+HOST_URL=http://localhost:8080/
+APP_TITLE=
+								
+#postgresql database config - Required
+DB_HOST=
+DB_USER=
+DB_PASS=
+DB_DATABASE=
+								
+#Sendgrid details for sending email - Optional
+SENDGRID_API_KEY=
+SENDGRID_SENDER=
+								
+#Google details for google login - Optional
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+								
+#Twilio details for phone OTP login - Optional
+TWILIO_ACCOUNT_SID=
+TWILIO_AUTH_TOKEN=
+TWILIO_SENDER=
+								
+#Optional
+ACCESS_TOKEN_SECRET=
+REFRESH_TOKEN_SECRET=
+							</pre>
+						</p>
+
+						<br>
+
+						<p>
+							Si queremos que el servidor envíe correos electrónicos, se debe crear una cuenta en <a
+								href="https://sendgrid.com/">https://sendgrid.com/</a> y obtener una API KEY, la cual se
+							debe colocar en el archivo <b>".env"</b> en la variable <b>"SENDGRID_API_KEY"</b>.
+							Para poder enviar correos electrónicos, se debe crear un sender, el cual se debe colocar en
+							la variable <b>"SENDGRID_SENDER"</b>.
+							<br><br>
+							Los demás datos solicitados en las variables no son necesarias ya que aún algunas funciones
+							no están implementadas o se encuentrán en proceso de desarrollo.
+						</p>
+
+						<br>
+
+						<p>
+							Por último, ya que hayamos configurado el archivo <b>".env"</b>, procederemos a ejecutar el
+							siguiente comando en la terminal:
+							<br>
+						<pre class="code-format">
+npm start
+							</pre>
+						<br>
+						Esto iniciará el servidor y se podrá acceder a la siguiente dirección: <a
+							href="http://localhost:8080/">http://localhost:8080/</a>
+						</p>
+
+						<h3>FrontEnd (Cliente)</h3>
+						<p>
+							Para que podamos visualizar el cliente, se debe instalar Angular, para ello se debe
+							descargar el instalador desde la página oficial de Angular <a
+								href="https://angular.io/guide/setup-local">https://angular.io/guide/setup-local</a> y
+							seguir los pasos de instalación.
+							<br><br>
+							Después de que se haya instalado Angular, se debe abrir una terminal y ejecutar el siguiente
+							comando:
+							<br>
+						<pre class="code-format">
+npm install
+							</pre>
+						<br>
+						Después de que se haya instalado las dependencias, optaremos por abrir el archivo
+						<b>"src/environments/environment.ts"</b> y cambiar los datos de conexión al servidor, los cuales
+						son los siguientes:
+						<br>
+
+						<pre class="code-format">
+export const environment = {
+	baseUrl: 'http://localhost:4200',
+	production: true,
+	url: "http://localhost:8080/"
+};
+							</pre>
+						<br>
+						En caso de que se haya cambiado el puerto del servidor, se debe cambiar el puerto en la variable
+						<b>"url"</b> del archivo <b>"src/environments/environment.ts"</b>.
+						<br><br>
+						<span class="code">*</span> <b>Nota:</b> En la carpeta de environments, hay dos archivos, uno
+						es para producción y el otro es para desarrollo, en este caso se está demostrando el de
+						producción.
+						</p>
+
+						<br>
+
+						<p>
+							Por último, ya que hayamos configurado el archivo <b>"src/environments/environment.ts"</b>,
+							procederemos a ejecutar el siguiente comando en la terminal:
+							<br>
+						<pre class="code-format">
+npm start
+							</pre>
+
+						<br>
+
+						Esto iniciará el cliente y se podrá acceder a la página web en la siguiente dirección: <a
+							href="http://localhost:4200/">http://localhost:4200/</a>
+
+						<br><br>
+
+						<span class="code">*</span> <b>Nota:</b> En caso de que se haya cambiado el puerto del servidor,
+						se debe cambiar el puerto en la variable <b>"url"</b> del archivo
+						<b>"src/environments/environment.ts"</b>.
+
+						<br><br>
+
+						<b>¡Felicitaciones 🥳!</b> Ya se ha configurado el servidor y el cliente, ahora se puede acceder
+						a
+						la aplicación web y disfrutar de sus funciones.
+					</div> <!-- end of icons -->
+
+					<div class="col-lg-12">
+						<hr>
+					</div> <!-- gray separator line -->
+
+
+					<div id="support" class="col-lg-12">
+						<h1>SOPORTE</h1>
+						<p>
+							Si desea obtener soporte adicional o tiene alguna pregunta, no dude en ponerse en contacto
+							conmigo a través de mi correo electrónico <a
+								href="mailto:thomasorozcog@gmail.com">thomasorozcog@gmail.com</a>
+							Recuerde que este es un archivo de ayuda para la instalación y configuración de la
+							aplicación web, si desea obtener ayuda adicional, puede ponerse en contacto conmigo a través
+							de mi correo electrónico.
+							<br><br>
+							Si usted requiere un módulo, o algo adicional a la aplicación web, puede ponerse en contacto
+							conmigo a través de mi correo electrónico y con gusto le cotizaré el módulo o la función que
+							usted requiera.
+							También puedo instalar la aplicación web en un servidor, en caso de que usted no sepa como
+							hacerlo, puede ponerse en contacto conmigo a través de mi correo electrónico y con gusto le
+							cotizaré la instalación de la aplicación web en un servidor.
+
+							<br><br>
+
+							<b>¡Gracias por su compra!</b>
+						</p>
+					</div> <!-- end of support -->
+
+					<div class="col-lg-12">
+						<p class="footer">GymTrack &copy; 2023</p>
+					</div>
+				</div>
+			</div>
+		</div> <!-- end of page content wrapper -->
+	</div> <!-- end of wrapper -->
+
+	<!-- Scripts Libraries -->
+	<script src="js/jquery.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!-- Custom Scripts -->
+	<script type="text/javascript">
+		<!-- Menu Toggle Script -->
+		$("#menu-toggle").click(function (e) {
+			e.preventDefault();
+			$("#wrapper").toggleClass("toggled");
+		});
+
+		/* Smooth Scrolling To Anchors  */
+		$(function () {
+			$('a[href*="#"]:not([data-toggle="tab"])').click(function () {
+				if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+					var target = $(this.hash);
+					target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+					if (target.length) {
+						$('html, body').animate({
+							scrollTop: target.offset().top
+						}, 700);
+						return false;
+					}
+				}
+			});
+		});
+	</script>
+
+</body>
+</html>
