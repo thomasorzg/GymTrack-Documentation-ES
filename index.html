@@ -1,3 +1,6 @@
+<!--
+	By GymTrack
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +15,6 @@
 </head>
 <body>
 	<div id="wrapper">
-		<!-- Sidebar -->
 		<div id="sidebar-wrapper">
 			<p>&mdash; Documentación &mdash;</p>
 			<ul class="sidebar-nav">
@@ -24,13 +26,14 @@
 					<a href="#setup">INSTALACIÓN</a>
 				</li>
 				<li>
+					<a href="#howtouse">¿CÓMO USAR?</a>
+				</li>
+				<li>
 					<a href="#support">SOPORTE</a>
 				</li>
 			</ul>
 		</div>
-		<!-- end of sidebar wrapper -->
 
-		<!-- Page Content -->
 		<div id="page-content-wrapper">
 			<div class="container-fluid">
 				<div class="row">
@@ -68,12 +71,11 @@
 							Sigue los pasos a continuación para instalar GymTrack en tu sistema: <a
 								href="#setup">Presiona aquí</a>
 						</p>
-					</div> <!-- end of introduction -->
+					</div>
 
 					<div class="col-lg-12">
 						<hr>
-					</div> <!-- gray separator line -->
-
+					</div>
 
 					<div id="setup" class="col-lg-12">
 						<h1>INSTALACIÓN</h1>
@@ -237,12 +239,227 @@ npm start
 						<b>¡Felicitaciones 🥳!</b> Ya se ha configurado el servidor y el cliente, ahora se puede acceder
 						a
 						la aplicación web y disfrutar de sus funciones.
-					</div> <!-- end of icons -->
+					</div>
 
 					<div class="col-lg-12">
 						<hr>
-					</div> <!-- gray separator line -->
+					</div>
 
+					<div id="howtouse" class="col-lg-12">
+						<h1>¿CÓMO USAR?</h1>
+						<p>
+							Ahora continuaremos con los pasos para poder utilizar la aplicación web, para ello se debe de
+							acceder a la página web, en este caso se accederá a la siguiente dirección: <a href="http://localhost:4200/">http://localhost:4200/</a> que pertenece al cliente
+							(o la dirección de nuestro servidor en caso de que se haya cambiado).
+							<br><br>
+							Una vez que se haya accedido a la página web, se mostrará la siguiente pantalla:
+							<br><br>
+							<img src="images/login.png" class="img-responsive">
+							<br><br>
+							En esta pantalla se muestra el "Inicio de sesión", en el cual se debe ingresar el correo y contraseña de la cuenta creada
+							por default en la base de datos, la cual es la siguiente:
+							<br><br>
+							<b>Correo electrónico:</b>
+							<br>
+							<span class="code">
+								admin@admin.com
+							</span>
+							<br><br>
+							<b>Contraseña:</b>
+							<br>
+							<span class="code">
+								admin123
+							</span>
+							<br><br>
+							Una vez que se haya ingresado el correo y contraseña, se debe presionar el botón de "Continuar", el cual nos
+							dirigirá a la siguiente pantalla:
+							<br><br>
+							<img src="images/dashboard.png" class="img-responsive">
+							<br><br>
+							En esta pantalla se muestra el "Dashboard", en el cual se muestra un resumen de los datos más importantes de la
+							aplicación web, así como también se muestra un gráfico de barras con los ingresos por mes y un gráfico de pastel con
+							comparativa de los gimnasios y propietarios registrados.
+							<br><br>
+							En la parte superior derecha se muestra el icono de una persona que hace referencia al usuario que ha iniciado sesión,
+							al abrir este dropdown se muestran las opciones de "Profile", "Change Password" y "Logout".
+							<br><br>
+							Ahora continuaremos con la explicación de cada una de las opciones del menú lateral izquierdo:
+							<br><br>
+							<b>Dashboard:</b>
+							<br>
+							En este módulo se muestra un resumen de los datos más importantes de la aplicación web, así como también se muestra un
+							gráfico de barras con los ingresos por mes y un gráfico de pastel con comparativa de los gimnasios y propietarios
+							registrados.
+							<br><br>
+							<b>Licencias:</b>
+							<br>
+							En este módulo se muestran las licencias de los gimnasios, en el cual se puede crear, editar y eliminar las licencias de
+							los gimnasios.
+							<br><br>
+							<b>Owners:</b>
+							<br>
+							En este módulo se muestran los propietarios de los gimnasios, en el cual se puede crear, editar y eliminar los propietarios
+							de los gimnasios.
+							<br><br>
+							<b>Gyms:</b>
+							<br>
+							En este módulo se muestran los gimnasios, en el cual se puede crear, editar y eliminar los gimnasios.
+							<br><br>
+							<b>Users:</b>
+							<br>
+							En este módulo se muestran los usuarios, en el cual se puede crear, editar y eliminar los usuarios en donde aquí mismo se
+							asigna el rol del usuario y al mismo tiempo se asigna el gimnasio al que pertenece.
+							<br><br>
+							<b>Members:</b>
+							<br>
+							En este módulo se muestran los miembros, en el cual se puede crear, editar y eliminar los miembros en donde aquí mismo se
+							asigna el gimnasio al que pertenece (pedirá asignar el gimnasio al que pertenece si el usuario es SUPERADMIN, ya que si es
+							ADMIN (Owner), se asignará automáticamente el gimnasio al que pertenece el usuario detectando a que gimnasio pertenece el usuario
+							que ha iniciado sesión).
+							<br><br>
+							<b>Memberships:</b>
+							<br>
+							En este módulo se muestran las membresías, en el cual se puede crear, editar y eliminar las membresías en donde aquí mismo se
+							asigna el gimnasio al que pertenece (pedirá asignar el gimnasio al que pertenece si el usuario es SUPERADMIN, ya que si es
+							ADMIN (Owner), se asignará automáticamente el gimnasio al que pertenece el usuario detectando a que gimnasio pertenece el usuario
+							que ha iniciado sesión).
+							<br><br>
+							<b>Payments:</b>
+							<br>
+							En este módulo se muestran los pagos, en el cual se puede crear, editar y eliminar los pagos en donde aquí mismo se
+							asigna el gimnasio al que pertenece (pedirá asignar el gimnasio al que pertenece si el usuario es SUPERADMIN, ya que si es
+							ADMIN (Owner), se asignará automáticamente el gimnasio al que pertenece el usuario detectando a que gimnasio pertenece el usuario
+							que ha iniciado sesión). También se puede filtrar por membresía y por miembro, este módulo es el más importante ya que aquí se
+							registran los pagos de los miembros de los gimnasios.
+							<br><br>
+							<b>Visits:</b>
+							<br>
+							En este módulo se muestran las visitas, en el cual se puede crear y eliminar las visitas, para eliminar visitas solamente lo puede
+							hacer el usuario SUPERADMIN y ADMIN (Owner) ya que tienen permisos para esta acción, mientras tanto los usuarios Staff no pueden
+							eliminar visitas. También se puede filtrar por gimnasio, por miembro y por fecha, este módulo es el más importante ya que aquí se
+							registran las visitas de los miembros de los gimnasios y se puede filtrar por fecha para saber cuantas visitas se han registrado en
+							un día en específico.
+							<br><br>
+							<b>Messenger:</b>
+							<br>
+							En este módulo podemos enviar mensajes a los miembros de los gimnasios, usuarios del sistema (esto solamente para
+							usuarios SUPERADMIN), también a un correo electrónico en específico, en donde se puede enviar un mensaje desde el sistema
+							para que el miembro o la persona pueda verlo en su correo electrónico. Sin necesidad nosotros de enviar un correo electrónico
+							desde nuestro correo electrónico personal.
+							<br><br>
+							<b>Settings:</b>
+							<br>
+							En este módulo solo es visualizado por el usuario SUPERADMIN, en donde muestra las configuraciones del sistema, en donde se
+							puede cambiar el nombre del sistema, el color del tema del sistema, información de la empresa, información de contacto y otras
+							configuraciones más.
+							<br><br>
+							Ahora los pasos para empezar a interactuar con la aplicación web:
+							<br><br>
+							<b>1.</b> Crear un propietario de un gimnasio.
+							<br>
+							<b>2.</b> Crear un gimnasio.
+							<br>
+							<b>3.</b> Crear un usuario y asignarle el rol de ADMIN (Owner) y asignarle el gimnasio al que pertenece.
+							<br>
+							<b>4.</b> Ir a la opción de "Licencias" y en el Toolbar presionar el botón de "Tipo de licencia" y aquí dentro presionaremos "Add New"
+							para crear un tipo de licencia por ejemplo "Monthly" y presionar el botón de "Submit".
+							<br>
+							<b>5.</b> Ir a la opción de "Licencias" y en el Toolbar presionar el botón "Add New" para crear una licencia, en donde se debe seleccionar
+							el gimnasio al que pertenece y el tipo de licencia. Posteriormente nos arrojará el precio de la licencia a cobrar. Al guardarlo se 
+							creará la licencia.
+							<br>
+							<b>6.</b> A partir de haber creado la licencia, automáticamente (si está configurado SENDGRID en el archivo .env) se enviará un correo
+							electrónico al gimnasio con la información de la licencia creada donde le comparte la clave de la licencia para que pueda ser utilizada.
+							En caso de que no se haya configurado SENDGRID en el archivo .env, en el listado de licencias se puede ver la clave de la licencia creada
+							presionando al botón de "View" en la licencia creada.
+							<br>
+							<b>7.</b> Para este punto el gimnasio al que le hemos creado la licencia, puede acceder a la aplicación web. Al ingresar a la aplicación web
+							le solicitará automáticamente la clave de la licencia, la cual se debe ingresar para poder acceder a empezar a interactuar con la aplicación.
+							<br>
+							<b>8.</b> Una vez que el gimnasio haya ingresado la clave de la licencia y esta sea válida, se le mostrará una alerta de que la licencia ha sido
+							activada y se le redireccionará al "Dashboard" en donde podrá empezar a interactuar con la aplicación web. Después de pasar esto en el "Dashboard"
+							le aparecerá su fecha de expiración de la licencia. También se le envía un correo electrónico al gimnasio con la información de la licencia activada donde
+							le comparte la fecha de expiración de la licencia y otros datos más.
+							<br>
+							<b>9.</b> Ahora el gimnasio puede empezar a crear miembros, membresías, pagos, visitas y más.
+							<br>
+							<b>10.</b> Para este punto nuestro gimnasio ya puede operar de manera normal, ahora continuaremos con la explicación de los módulos más importantes
+							de la aplicación web.
+							<br><br>
+							<b>Members:</b>
+							<br>
+							En este módulo se muestran los miembros, en el cual se puede crear, editar y eliminar. A la hora de dar de alta un miembro, nos aparece el 
+							siguiente formulario:
+							<br><br>
+							<img src="images/new_member.png" class="img-responsive">
+							<br><br>
+							En este formulario se debe ingresar los datos del miembro (casi todos los campos son obligatorios), ya que son datos relevantes para el miembro y para el gimnasio.
+							Un punto muy importante es que si nosotros queremos que el miembro pueda registrar su visita mediante tarjeta RFID (tarjeta de proximidad), debemos presionar el botón
+							"Enable RFID" para que se habilite el campo de "RFID Card" y así poder ingresar el número de la tarjeta RFID del miembro. En caso de que no se quiera que el miembro
+							pueda registrar su visita mediante tarjeta RFID, se debe dejar deshabilitado el botón de "Enable RFID" y al mandar a guardar el miembro, automáticamente generará una
+							clave de acceso para el miembro y se le generará automáticamente un código QR para que el miembro pueda registrar su visita mediante el código QR.
+							<br><br>
+							<b>Memberships:</b>
+							<br>
+							En este módulo se muestran las membresías, en el cual se puede crear, editar y eliminar. A la hora de dar de alta una membresía, nos aparece el
+							siguiente formulario:
+							<br><br>
+							<img src="images/new_membership.png" class="img-responsive">
+							<br><br>
+							En este formulario se debe ingresar los datos de la membresía (todos los campos son obligatorios), ya que son datos relevantes para la membresía y para el gimnasio.
+							Nos solicita los datos como el nombre de la membresía, el precio de la membresía y el tipo de membresía. El tipo de membresía es muy importante ya que aquí se
+							va habilitar el input dependiendo del tipo de membresía que se haya seleccionado, por ejemplo si seleccionamos el tipo de membresía "Monthly", se habilitará el
+							input de "Monthly" en donde se debe ingresar el número de meses que durará la membresía, en caso de que se seleccione el tipo de membresía "Weekly", se habilitará
+							el input de "Weekly" en donde se debe ingresar el número de semanas que durará la membresía y así sucesivamente con el tipo de membresía "Daily".
+							<br><br>
+							<b>Payments:</b>
+							<br>
+							En este módulo se muestran los pagos, en el cual se puede crear y eliminar solamente (ya que no se puede editar un pago). A la hora de dar de alta un pago, nos aparece el
+							siguiente formulario:
+							<br><br>
+							<img src="images/new_payment.png" class="img-responsive">
+							<br><br>
+							En este formulario se debe ingresar los datos del pago (todos los campos son obligatorios), ya que son datos relevantes para el pago y para el gimnasio.
+							Nos solicita los datos como el miembro al que se le está realizando el pago y la membresía que se le está asignando al miembro. Al seleccionar la membresía nos arrojará
+							el precio de la membresía a cobrar después de haber seleccionado al miembro y la membresía. También nos solicita la fecha de inicio de la membresía para que al registrar el pago
+							pueda calcular la fecha de expiración de la membresía. Una vez se haya registrado el pago, se le enviará un correo electrónico al miembro con la información del pago realizado.
+							Posteriormente a esto nos aparecerá una alerta de que el pago se ha registrado correctamente y podremos visualizarlo en la lista de pagos. En caso de que el miembro este solicitando
+							un "Ticket de pago físico" podemos generarlo para impresión presionando el botón de "Ticket" en el listado de pagos.
+							<br><br>
+							<b>Visits:</b>
+							<br>
+							En este módulo se muestran las visitas, en el cual se puede crear y eliminar solamente (ya que no se puede editar una visita). A la hora de dar de alta una visita, nos aparece el
+							siguiente formulario:
+							<br><br>
+							<img src="images/new_visit.png" class="img-responsive">
+							<br><br>
+							En este formulario se debe ingresar solamente un campo que es el miembro al que se le está registrando la visita, ya que es un dato relevante para la visita y para el gimnasio.
+							Nos estará solicitando el miembro al que se le está registrando la visita, pero no podemos buscarlo por nombre ni por apellido, solamente podemos buscarlo por su clave de acceso y para esto
+							solamente tenemos que escanear el código QR o la tarjeta RFID del miembro y automáticamente registrará la visita detectando la clave de acceso del miembro. En caso de que el miembro no tenga
+							una membresía activa, no exista o no tenga una clave de acceso válida no podrá registrar la visita y arrojará una alerta mencionando el problema que se ha detectado.
+							<br><br>
+							<b>Messenger:</b>
+							<br>
+							En este módulo podemos enviar mensajes a los miembros de los gimnasios y a un correo electrónico en específico, en donde se puede enviar un mensaje desde el sistema
+							para que el miembro o la persona pueda verlo en su correo electrónico. Sin necesidad nosotros de enviar un correo electrónico desde nuestro correo electrónico personal.
+							<br><br>
+							<img src="images/messenger.png" class="img-responsive">
+							<br><br>
+							Todas las tablas o listados del sistema cuentan con un buscador, en donde se puede buscar algún dato que contenga la tabla. También se puede ordenar por orden ascendente o descendente. También cuenta
+							con la opción en el "Toolbar" de exportar el contenido en formato CSV.
+							<br><br>
+							<img src="images/toolbar.png" class="img-responsive">
+							<br>
+							El módulo de licencias y miembros cuentan con un módulo interno de "Expired" donde se puede visualizar las licencias vencidas y los miembros que no tienen una membresía activa que fueron
+							registrados en el sistema en "Expired Members" y "Expired Licenses" respectivamente.
+							<br><br>
+							Finalmente para este punto ya se puede utilizar la aplicación web de manera normal, en caso de que se requiera más información o ayuda, se puede poner en contacto conmigo a través de mi correo electrónico.
+						</p>
+					</div>
+
+					<div class="col-lg-12">
+						<hr>
+					</div>
 
 					<div id="support" class="col-lg-12">
 						<h1>SOPORTE</h1>
@@ -265,15 +482,15 @@ npm start
 
 							<b>¡Gracias por su compra!</b>
 						</p>
-					</div> <!-- end of support -->
+					</div>
 
 					<div class="col-lg-12">
 						<p class="footer">GymTrack &copy; 2023</p>
 					</div>
 				</div>
 			</div>
-		</div> <!-- end of page content wrapper -->
-	</div> <!-- end of wrapper -->
+		</div>
+	</div>
 
 	<!-- Scripts Libraries -->
 	<script src="js/jquery.js" type="text/javascript"></script>
